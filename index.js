@@ -5,10 +5,10 @@ const app = express()
 const port = 3000
 
 var con = mysql.createConnection({
-  host: "bajxiy5yyw6kleyymvfx-mysql.services.clever-cloud.com",
-  port: '3306',
-  user: "ul1exuvxruk0vuyn",
-  password: "B7xnthbak0mnHzwKdpRF"
+  host: 'bajxiy5yyw6kleyymvfx-mysql.services.clever-cloud.com',
+  user: 'ul1exuvxruk0vuyn',
+  password: 'B7xnthbak0mnHzwKdpRF',
+  database: 'bajxiy5yyw6kleyymvfx'
 });
 
 String.prototype.formatKeys = function(keys) {
@@ -43,7 +43,7 @@ async function getData(parametros, tabla){
              queryResult = result;
         });
 
-    await sleep(100);
+    await sleep(500);
     return  queryResult
 }
 
@@ -60,17 +60,7 @@ const agregarData = (reqBody, tableName)=>{
     });
 }
 
-con.connect(function(err) {
-    if (err){
-    throw err;  
-    } 
-  console.log("Connected!");
-
-  con.query("use ul1exuvxruk0vuyn;", function (err, result) {
-    if (err) throw err;
-    console.log("Result: ", result);
-  });
-});
+con.connect();
 
 app.use(express.json())
 
