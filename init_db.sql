@@ -13,7 +13,7 @@ create table if not exists Registro(
     numeroBeneficio varchar(20),
     numeroTramite varchar(20),
     telefono varchar(20),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (id)
 );
 
 create table if not exists Prestadores(
@@ -24,7 +24,7 @@ create table if not exists Prestadores(
     domicilio varchar(100),
     especialidad varchar(100),
     telefono varchar(20),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (id)
 );
 
 create table if not exists Hospital(
@@ -32,5 +32,5 @@ create table if not exists Hospital(
     nombre varchar(100) DEFAULT NULL,
     domicilio varchar(100),
     telefono varchar(20),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (id)
 );

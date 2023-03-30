@@ -5,10 +5,10 @@ const app = express()
 const port = 3000
 
 var con = mysql.createConnection({
-  host: "127.0.0.1",
+  host: "bajxiy5yyw6kleyymvfx-mysql.services.clever-cloud.com",
   port: '3306',
-  user: "root",
-  password: ""
+  user: "ul1exuvxruk0vuyn",
+  password: "B7xnthbak0mnHzwKdpRF"
 });
 
 String.prototype.formatKeys = function(keys) {
@@ -66,7 +66,7 @@ con.connect(function(err) {
     } 
   console.log("Connected!");
 
-  con.query("use carga_cliente;", function (err, result) {
+  con.query("use ul1exuvxruk0vuyn;", function (err, result) {
     if (err) throw err;
     console.log("Result: ", result);
   });
