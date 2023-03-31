@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 const express = require('express')
 const serverless=require('serverless-http')
+const cors = require('cors');
 
 const app = express()
 const router=express.Router()
@@ -105,6 +106,7 @@ router.post('/agregar-hospital', (req, res) => {
 });
 
 app.use(express.json())
+app.use(cors());
 app.use('/.netlify/functions/api', router)
 
 module.exports.handler = serverless(app)
